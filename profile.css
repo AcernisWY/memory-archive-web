@@ -1,0 +1,256 @@
+/* A personal archive: quiet glass, original artwork, and useful feedback. */
+.is-profile-mode .archive-primary { grid-template-rows: 64px minmax(0,1fr) 104px; }
+.is-profile-mode .archive-dock { height: 66px; margin-top: 0; }
+.is-profile-mode .archive-dock > button img { width: 43px; height: 43px; }
+.is-profile-mode .dock-indicator-cell > span { width: 87px; height: 87px; }
+.pf-workspace { display: flex; flex-direction: column; gap: 10px; }
+.pf-home { flex: 1; min-height: 0; overflow: auto; padding: 0 10px 8px 0; scrollbar-width: thin; scrollbar-color: #c8c6ef60 transparent; }
+.pf-home-content { min-height: 100%; }
+.pf-hero { display: flex; align-items: center; gap: 20px; padding: 4px 0 20px; }
+.pf-hero > img { width: 82px; height: 82px; border-radius: 50%; object-fit: cover; border: 2px solid #dddfff69; box-shadow: 0 6px 24px #1d184554; }
+.pf-hero > div { min-width: 0; flex: 1; }
+.pf-hero .a-eyebrow { font-size: 8px; margin: 0 0 8px; }
+.pf-hero h1 { font-size: clamp(23px,2.1vw,32px); font-weight: 400; margin: 0; letter-spacing: 2px; overflow-wrap: anywhere; }
+.pf-hero p:last-child { font-size: 11px; line-height: 1.8; color: #d4d5ec; margin: 9px 0 0; white-space: pre-line; overflow-wrap: anywhere; }
+.pf-hero > button { flex-shrink: 0; font-size: 11px; padding: 10px 15px; }
+.pf-stats { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); padding: 10px 0 18px; border-bottom: 1px solid #d8d7ff24; }
+.pf-stats > button { border: 0; border-right: 1px solid #d8d7ff24; background: none; padding: 3px 8px; color: #f3f0ff; border-radius: 6px; transition: background 180ms; }
+.pf-stats > button:last-child { border-right: 0; }
+.pf-stats span { display: block; font-size: 11px; color: #c8cbe5; margin-bottom: 6px; }
+.pf-stats strong { font: 300 31px/1.3 Arial,sans-serif; }
+.pf-stats > button:hover { background: #d8d7ff10; }
+.pf-collections { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; margin: 21px 0 24px; }
+.pf-collections > button { display: flex; flex-direction: column; align-items: center; border: 1px solid #d9dcff36; border-radius: 18px; background: linear-gradient(140deg,#bfcaff0a,#a4a5ef11); color: #f2f0ff; padding: 13px 8px 16px; transition: transform 240ms var(--ease),background 200ms,border-color 200ms,box-shadow 240ms; }
+.pf-collections img { width: 85px; height: 76px; object-fit: contain; filter: drop-shadow(0 7px 12px #1613353d); transition: transform 280ms var(--ease); }
+.pf-collections span { font-size: 13px; letter-spacing: 1px; margin-top: 7px; }
+.pf-collections small { font-size: 9px; color: #c4c7e1; margin-top: 7px; }
+.pf-collections > button:hover { transform: translateY(-3px); border-color: #e2dfff87; background: #c2bfff22; box-shadow: 0 8px 22px #17132f25; }
+.pf-collections > button:hover img { transform: translateY(-3px) rotate(-3deg); }
+.pf-collections > button:active { transform: scale(.98); }
+.pf-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+.pf-section-heading h2,.pf-section-heading h3 { font-size: 14px; font-weight: 400; margin: 0; letter-spacing: 1px; }
+.pf-section-heading > span { color: #babedb; font-size: 9px; }
+.pf-section-heading > button { display: inline-flex; align-items: center; gap: 5px; background: none; color: #d6d5ed; border: 0; font-size: 10px; padding: 4px 0; }
+.pf-section-heading > button svg { width: 12px; height: 12px; }
+.pf-badges { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+.pf-badges > button { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 10px 8px; background: #b7b9f40c; border: 1px solid #d8d7ff24; border-radius: 14px; text-align: left; color: #d2d0e9; transition: background 180ms,transform 180ms,border-color 180ms; }
+.pf-badges img { width: 48px; height: 52px; object-fit: contain; filter: grayscale(.65); opacity: .6; }
+.pf-badges strong { font-weight: 400; font-size: 11px; display: block; }
+.pf-badges small { display: block; color: #b9bad5; font-size: 10px; margin-top: 7px; }
+.pf-badges .is-earned { border-color: #ded0ff65; background: #ccb2f517; color: #f2e9ff; }
+.pf-badges .is-earned img { opacity: 1; filter: drop-shadow(0 0 7px #e1d4ff3b); }
+.pf-badges > button:hover { background: #c5bdff1a; transform: translateY(-2px); }
+.pf-activity-heading { margin-top: 22px; }
+.pf-activity { display: flex; align-items: center; gap: 10px; width: 100%; color: #dfdff2; text-align: left; background: none; border: 0; border-bottom: 1px solid #d1d1f31c; padding: 12px 5px; transition: background 180ms; }
+.pf-activity:hover { background: #d1cbff0c; }
+.pf-activity-dot { width: 6px; height: 6px; border-radius: 50%; background: #c5bef5; box-shadow: 0 0 10px #c4bfff38; flex-shrink: 0; }
+.pf-activity > span:nth-child(2) { flex: 1; min-width: 0; }
+.pf-activity strong { font-size: 11px; font-weight: 400; display: block; }
+.pf-activity > span > span { font-size: 10px; color: #b9bedb; margin-top: 5px; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pf-activity time { font-size: 9px; color: #b9bedb; white-space: nowrap; }
+.pf-activity > svg { width: 12px; height: 12px; }
+.pf-activity-empty { padding: 17px 16px; font-size: 11px; line-height: 1.8; background: #c8c7ff08; border: 1px dashed #cbcaff29; border-radius: 13px; color: #d4d3e9; }
+.pf-activity-empty small { display: block; font-size: 9px; color: #b7bcd8; margin-top: 5px; }
+.pf-status { font-size: 9px; line-height: 1.7; color: #b5b9d4; flex-shrink: 0; padding: 0 0 1px; }
+.pf-status.has-error { color: #ffd2d9; }
+.pf-status button { border: 0; background: none; color: inherit; text-decoration: underline; }
+.is-profile-mode .archive-context-rail { padding: 28px 24px; overflow: auto; scrollbar-width: thin; scrollbar-color: #c8c6ef60 transparent; }
+.pf-rail { display: flex; flex-direction: column; gap: 19px; }
+.pf-rail > header h2 { font-size: 23px; font-weight: 400; letter-spacing: 3px; margin: 8px 0 4px; }
+.pf-rail .a-eyebrow { font-size: 7px; }
+.pf-rail-card { padding: 19px 17px; border: 1px solid #d8d7ff30; border-radius: 17px; background: #a9a5dd10; }
+.pf-rail-card h3 { font-size: 12px; font-weight: 400; letter-spacing: 1px; margin: 0 0 13px; }
+.pf-rail-card .pf-section-heading h3 { margin: 0; }
+.pf-rail-card dl { margin: 0; font-size: 11px; display: grid; gap: 14px; }
+.pf-rail-card dl > div { display: flex; gap: 10px; justify-content: space-between; }
+.pf-rail-card dt { color: #bec1dd; flex-shrink: 0; }
+.pf-rail-card dd { margin: 0; text-align: right; color: #efebff; overflow-wrap: anywhere; }
+.pf-rail-card .pf-id { font: 10px/1.5 monospace; letter-spacing: .4px; }
+.pf-rail-card > p { color: #c3c2db; font-size: 10px; line-height: 1.9; margin: 9px 0 0; }
+.pf-rail-card .pf-local-state { display: flex; align-items: center; gap: 7px; color: #e1dff4; font-size: 11px; }
+.pf-local-state i { width: 5px; height: 5px; background: #b4e1ce; border-radius: 50%; }
+.pf-setting-card > button { display: flex; align-items: center; justify-content: space-between; gap: 10px; border: 0; border-top: 1px solid #d8d7ff20; color: #f0edff; background: none; width: 100%; text-align: left; padding: 14px 0; font-size: 11px; }
+.pf-setting-card > button:last-child { padding-bottom: 0; }
+.pf-setting-card > button small { display: block; color: #bfc0d9; font-size: 9px; margin-top: 7px; line-height: 1.7; }
+.pf-setting-card > button svg { width: 14px; height: 14px; transition: transform 180ms; }
+.pf-setting-card > button:hover svg { transform: translateX(3px); }
+.pf-rail-note { font-size: 9px; color: #b9b5d2; line-height: 2; margin: 0; }
+.pf-gallery { display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 15px; }
+.pf-gallery-heading { display: flex; gap: 12px; align-items: center; flex-shrink: 0; }
+.pf-gallery-heading > img { width: 62px; height: 62px; object-fit: contain; }
+.pf-gallery-heading > div { min-width: 0; flex: 1; }
+.pf-gallery-heading h1 { font-size: 25px; font-weight: 400; margin: 3px 0 0; letter-spacing: 2px; }
+.pf-gallery-heading p { font-size: 10px; color: #c2c5df; margin: 7px 0 0; line-height: 1.8; }
+.pf-gallery-heading .a-eyebrow { font-size: 7px; }
+.pf-gallery-heading > button:last-child { font-size: 10px; padding: 9px 12px; flex-shrink: 0; }
+.pf-gallery-tools { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.pf-search { display: flex; align-items: center; gap: 8px; border: 1px solid #d2d5ff3c; border-radius: 12px; background: #25234418; padding: 10px 12px; min-width: 0; flex: 1; }
+.pf-search svg { width: 16px; height: 16px; color: #c7c8e3; }
+.pf-search input { border: 0; outline: 0; background: none; color: #f3f1ff; font: inherit; font-size: 11px; width: 100%; min-width: 0; }
+.pf-search:focus-within { border-color: #dfdbffb3; box-shadow: 0 0 0 2px #ccc9ff12; }
+.pf-search input::placeholder { color: #b4b8d3; }
+#pf-date-filter { display: flex; gap: 8px; }
+#pf-date-filter label { font-size: 9px; color: #c5c6df; display: flex; align-items: center; gap: 6px; }
+.pf-gallery select { padding: 8px 7px; background: #333758; border: 1px solid #d0d3ff39; border-radius: 9px; color: #eeeaff; font: inherit; font-size: 10px; }
+#pf-result-count { font-size: 10px; color: #c7c8e2; white-space: nowrap; }
+.pf-emotions { display: flex; flex-wrap: wrap; gap: 7px; flex-shrink: 0; }
+.pf-emotions button { border: 1px solid #d2d3ff30; border-radius: 22px; background: #bbbaff09; color: #d6d6eb; padding: 7px 10px; font-size: 10px; transition: background 180ms,border-color 180ms; }
+.pf-emotions button span { margin-left: 7px; color: #bfbedb; }
+.pf-emotions button[aria-pressed=true] { background: #cbc2ff26; border-color: #d9d3ff8c; color: #fff; }
+.pf-record-scroll { flex: 1; min-height: 0; overflow: auto; padding-right: 8px; scrollbar-width: thin; scrollbar-color: #c8c6ef60 transparent; }
+#pf-record-list { display: grid; gap: 12px; }
+.pf-record { border: 1px solid #d6d6ff32; background: #b5bdf807; border-radius: 16px; overflow: hidden; }
+.pf-record-main { display: flex; align-items: center; gap: 15px; padding: 14px; width: 100%; border: 0; background: none; color: #f4f0ff; text-align: left; transition: background 180ms; }
+.pf-record-main:hover { background: #b9b9f411; }
+.pf-record-main > img,.pf-no-cover { width: 86px; height: 78px; border-radius: 10px; object-fit: cover; flex-shrink: 0; }
+.pf-no-cover { display: grid; place-items: center; background: linear-gradient(135deg,#b3b9e328,#9a86cf35); color: #dbd5ef; }
+.pf-no-cover svg { width: 28px; height: 28px; }
+.pf-record-main > span:not(.pf-no-cover) { flex: 1; min-width: 0; }
+.pf-record-main small { font-size: 9px; color: #bfc3de; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pf-record-main strong { display: block; font-size: 15px; font-weight: 400; margin: 8px 0 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pf-record-main > span > span { display: block; color: #c5c7df; font-size: 11px; line-height: 1.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pf-record-main em { font-style: normal; font-size: 9px; color: #b5b9d4; margin-top: 6px; display: block; }
+.pf-record-main .is-expired { color: #f5c7d0; }
+.pf-record-main > svg { width: 15px; }
+.pf-record-meta { border-top: 1px solid #d6d6ff1c; padding: 7px 14px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.pf-record-meta > span { font-size: 9px; color: #bfc1dc; }
+.pf-record-meta button,.pf-detail-marks button { display: inline-flex; align-items: center; gap: 6px; color: #cfcde7; border: 1px solid #d3cbff36; background: #bab2e509; padding: 7px 10px; border-radius: 9px; font-size: 10px; transition: background 180ms,border-color 180ms,transform 180ms; }
+.pf-record-meta button svg,.pf-detail-marks button svg { width: 14px; height: 14px; }
+.pf-record-meta button[aria-pressed=true],.pf-detail-marks button[aria-pressed=true] { color: #f5e7ff; background: #dab4ed22; border-color: #e3c4ff8a; }
+.pf-record-meta button:hover,.pf-detail-marks button:hover { background-color: #d6c5f52e; }
+.pf-record-meta button:active,.pf-detail-marks button:active { transform: scale(.96); }
+.pf-detail-marks { padding: 9px 0 0; }
+.pf-detail-marks > div { display: flex; gap: 8px; }
+.pf-detail-marks small { display: block; font-size: 9px; color: #c0bbd4; margin: 8px 0 12px; }
+.pf-gallery-note { font-size: 9px; line-height: 1.8; color: #babbd6; margin: 0; flex-shrink: 0; }
+.pf-empty { text-align: center; padding: 50px 15px 35px; }
+.pf-empty > svg { width: 38px; height: 38px; color: #d1c6ee; }
+.pf-empty h2 { font-size: 18px; font-weight: 400; margin: 20px 0 10px; }
+.pf-empty p { color: #bec2dc; font-size: 11px; line-height: 1.8; margin-bottom: 20px; }
+.pf-empty button { margin: auto; }
+.pf-dialog { padding: 28px; width: min(620px,calc(100vw - 80px)); max-height: calc(100svh - 64px); border: 1px solid #d6d6ff71; border-radius: 24px; background: linear-gradient(135deg,#2a3153fa,#453658fa); color: #f4f0ff; overflow: auto; box-shadow: 0 24px 90px #07092288; scrollbar-width: thin; scrollbar-color: #c8c6ef60 transparent; }
+.pf-dialog[open] { animation: dialog-enter 300ms var(--ease) both; }
+.pf-dialog::backdrop { background: #0c112b9c; backdrop-filter: blur(9px); animation: backdrop-enter 220ms ease both; }
+.pf-dialog > header { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+.pf-dialog h2 { margin: 8px 0 0; font-size: 22px; font-weight: 400; letter-spacing: 1px; }
+.pf-dialog .a-eyebrow { font-size: 7px; }
+#pf-dialog-description { font-size: 11px; color: #c9c6df; line-height: 1.9; margin: 16px 0 22px; }
+#pf-dialog-error { color: #ffd4df; background: #a24b6b18; border: 1px solid #e99ebd45; border-radius: 10px; padding: 12px; font-size: 11px; line-height: 1.8; }
+.pf-avatar-editor { display: flex; align-items: center; gap: 23px; margin-bottom: 20px; }
+.pf-avatar-circle { width: 100px; height: 100px; border: 2px solid #ded8ff6d; border-radius: 50%; overflow: hidden; background: #303653; flex-shrink: 0; }
+.pf-avatar-circle img,.pf-avatar-circle canvas { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pf-avatar-editor > div > small { display: block; font-size: 9px; line-height: 1.8; color: #c0bbd6; margin-top: 9px; }
+.pf-avatar-editor .a-soft-button { display: inline-flex; padding: 8px 12px; font-size: 11px; }
+.pf-text-button { border: 0; background: none; color: #d9cdec; font-size: 10px; padding: 7px 10px; text-decoration: underline; text-underline-offset: 4px; }
+.pf-crop-controls { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; margin: 0 0 20px; border: 1px solid #d4cfff27; border-radius: 12px; padding: 12px; }
+.pf-crop-controls label { font-size: 10px; color: #cfc9e1; }
+.pf-crop-controls input { width: 100%; margin: 10px 0 0; accent-color: #c9b7eb; }
+.pf-form-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.pf-full { grid-column: 1/-1; }
+.pf-field { display: flex; flex-direction: column; gap: 9px; color: #d7d1e9; font-size: 11px; min-width: 0; }
+#pf-dialog-content > .pf-field { margin-bottom: 20px; }
+.pf-field input,.pf-field select,.pf-field textarea { min-width: 0; width: 100%; padding: 11px 12px; border: 1px solid #d0c9ff47; border-radius: 10px; background: #24294466; color: #f4eeff; font: inherit; font-size: 12px; outline: none; transition: border-color 180ms,box-shadow 180ms; }
+.pf-field textarea { resize: vertical; min-height: 65px; max-height: 140px; line-height: 1.8; }
+.pf-field input:focus,.pf-field select:focus,.pf-field textarea:focus { border-color: #d8c6f7b8; box-shadow: 0 0 0 3px #cdb9f312; }
+.pf-field option { background: #34334e; }
+.pf-field input::placeholder { color: #9e9dbb; }
+.pf-field small { font-size: 10px; line-height: 1.8; color: #bdb9d4; }
+.pf-birthday { display: flex; align-items: center; gap: 9px; }
+.pf-birthday label { flex: 1; min-width: 0; }
+.pf-modal-actions { display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px; }
+.pf-modal-actions .a-soft-button { font-size: 11px; padding: 11px 17px; }
+.pf-primary { background: linear-gradient(110deg,#c3b9ed3c,#c1b0eb45); border-color: #e3d3ff8c; }
+.pf-dialog button:disabled,.pf-workspace button:disabled { cursor: default; opacity: .5; transform: none; }
+.pf-discard { position: sticky; bottom: 0; padding: 18px; border: 1px solid #d7c2f8a0; border-radius: 15px; background: #3e3455; box-shadow: 0 -10px 45px #17172f88; margin-top: 20px; z-index: 2; }
+.pf-discard strong { font-size: 13px; font-weight: 400; }
+.pf-discard p { color: #cfc5df; font-size: 11px; line-height: 1.8; }
+.pf-discard > div { display: flex; justify-content: flex-end; gap: 10px; }
+.pf-settings-note { font-size: 10px; color: #c4bdd8; line-height: 1.9; border-left: 2px solid #bcb2dd66; padding-left: 12px; }
+.pf-reset-area { margin-top: 28px; padding-top: 18px; border-top: 1px solid #d2c8ef26; }
+.pf-reset-area > span { display: block; font-size: 10px; color: #b9b0cf; margin: 8px 10px 0; line-height: 1.8; }
+#pf-reset-confirm { font-size: 11px; line-height: 1.9; padding: 12px; background: #b7a2db0e; border-radius: 10px; margin-top: 12px; }
+#pf-reset-confirm button { display: inline-flex; margin: 0 8px 0 0; font-size: 10px; }
+.pf-pick-list { margin-top: 14px; max-height: 360px; overflow: auto; scrollbar-width: thin; scrollbar-color: #c8c6ef60 transparent; }
+.pf-pick-list > button { display: flex; align-items: center; justify-content: space-between; gap: 14px; width: 100%; border: 1px solid #d3c9f52e; border-radius: 12px; background: #bbb0df08; color: #e5dff2; padding: 13px 15px; margin: 9px 0; text-align: left; transition: background 180ms,border-color 180ms; }
+.pf-pick-list > button > span:first-child { min-width: 0; }
+.pf-pick-list strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; font-weight: 400; }
+.pf-pick-list small { display: block; color: #bbb5d0; font-size: 9px; margin-top: 7px; }
+.pf-pick-list > button > span:last-child { white-space: nowrap; font-size: 10px; }
+.pf-pick-list > button[aria-pressed=true] { background: #c4afe525; border-color: #dcc8f778; }
+.pf-pick-list > button:hover { border-color: #dcc8f79c; }
+.pf-muted { color: #c2bad6; font-size: 11px; line-height: 1.9; }
+.pf-badge-detail { text-align: center; padding: 4px 0 12px; }
+.pf-badge-detail img { height: 140px; width: 140px; object-fit: contain; opacity: .65; filter: grayscale(.5); }
+.pf-badge-detail.is-earned img { opacity: 1; filter: drop-shadow(0 0 16px #ded0f73b); }
+.pf-badge-detail p { color: #d6cee6; font-size: 13px; margin: 16px 0; }
+.pf-badge-detail strong { display: block; font: 24px Arial,sans-serif; }
+.pf-badge-detail progress { display: block; width: 65%; height: 6px; margin: 20px auto 0; border: 0; border-radius: 5px; overflow: hidden; background: #bfb6e122; }
+.pf-badge-detail progress::-webkit-progress-bar { background: #bfb6e122; }
+.pf-badge-detail progress::-webkit-progress-value { background: linear-gradient(90deg,#a8b4e8,#d5b7e9); border-radius: 5px; }
+.pf-export-scope { padding: 16px; border: 1px solid #d3ccf736; border-radius: 12px; background: #b9b4e70b; }
+.pf-export-scope p { font-size: 12px; line-height: 1.9; margin: 0 0 6px; }
+.pf-export-options { display: grid; gap: 14px; padding: 20px 0; }
+.pf-export-options label { display: flex; align-items: flex-start; gap: 10px; font-size: 12px; }
+.pf-export-options input { accent-color: #c9b7eb; margin-top: 3px; }
+.pf-export-options small { display: block; color: #bfb7d4; font-size: 10px; margin-top: 6px; }
+.pf-export-status { font-size: 11px; color: #e1d8ef; line-height: 1.9; }
+:root[data-motion="reduce"] *, :root[data-motion="reduce"] *::before, :root[data-motion="reduce"] *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0ms !important; scroll-behavior: auto !important; }
+:root[data-motion="reduce"] .world-image,:root[data-motion="reduce"] .orb-parallax,:root[data-motion="reduce"] .reveal-item,:root[data-motion="reduce"] .folder-card:hover,:root[data-motion="reduce"] .folder-card:hover .folder-front,:root[data-motion="reduce"] .archive-dock > button:hover img,:root[data-motion="reduce"] .memory-card:hover { transform: none; }
+:root[data-motion="reduce"] .pf-collections > button:hover,:root[data-motion="reduce"] .pf-collections > button:hover img,:root[data-motion="reduce"] .pf-badges > button:hover { transform: none; }
+@media (max-width: 1250px) {
+  .is-profile-mode .archive-context-rail { padding: 24px 17px; }
+  .pf-rail-card { padding: 16px 13px; }
+  .pf-hero { gap: 14px; }
+  .pf-hero > img { width: 67px; height: 67px; }
+  .pf-collections { gap: 8px; }
+  .pf-collections img { width: 67px; height: 65px; }
+  .pf-collections span { font-size: 11px; }
+  .pf-collections small { font-size: 8px; }
+  .pf-badges { gap: 8px; }
+  .pf-badges > button { gap: 6px; padding: 8px 5px; }
+  .pf-badges img { width: 36px; height: 43px; }
+  .pf-badges strong { font-size: 10px; }
+  .pf-gallery-heading > img { width: 45px; height: 45px; }
+  .pf-gallery-heading h1 { font-size: 21px; }
+  .pf-gallery-heading p:not(.a-eyebrow) { font-size: 9px; }
+  .pf-gallery-tools { flex-wrap: wrap; gap: 8px; }
+  .pf-search { min-width: 130px; }
+}
+@media (max-height: 800px) {
+  .is-profile-mode .archive-primary { grid-template-rows: 52px minmax(0,1fr) 80px; }
+  .is-profile-mode .archive-dock { height: 53px; }
+  .is-profile-mode .archive-dock > button img { width: 34px; height: 34px; }
+  .is-profile-mode .dock-indicator-cell > span { width: 71px; height: 71px; }
+  .pf-hero { padding-bottom: 14px; }
+  .pf-hero > img { width: 60px; height: 60px; }
+  .pf-hero h1 { font-size: 25px; }
+  .pf-hero p:last-child { margin-top: 5px; }
+  .pf-hero .a-eyebrow { margin-bottom: 5px; }
+  .pf-stats { padding: 5px 0 13px; }
+  .pf-stats strong { font-size: 26px; }
+  .pf-stats span { margin-bottom: 4px; }
+  .pf-collections { margin: 14px 0 16px; }
+  .pf-collections > button { padding: 8px 5px 12px; }
+  .pf-collections img { width: 66px; height: 56px; }
+  .pf-collections small { margin-top: 5px; }
+  .pf-badges img { width: 37px; height: 39px; }
+  .pf-badges > button { padding: 7px; }
+  .pf-activity-heading { margin-top: 17px; }
+  .pf-rail { gap: 14px; }
+  .pf-rail-card { padding: 15px 13px; }
+  .pf-rail-card dl { gap: 11px; }
+  .pf-rail-card h3 { margin-bottom: 10px; }
+  .is-profile-mode .archive-context-rail { padding-top: 22px; padding-bottom: 20px; }
+  .pf-rail-note { font-size: 8px; }
+  .pf-gallery { gap: 12px; }
+  .pf-empty { padding-top: 25px; }
+  .pf-dialog { padding: 22px 25px; max-height: calc(100svh - 40px); }
+  .pf-dialog h2 { font-size: 20px; }
+  #pf-dialog-description { margin: 13px 0 17px; }
+  .pf-avatar-editor { margin-bottom: 16px; }
+  .pf-avatar-circle { width: 80px; height: 80px; }
+  .pf-form-grid { gap: 12px; }
+  .pf-field { gap: 7px; }
+  .pf-field input,.pf-field select,.pf-field textarea { padding: 9px 10px; }
+  .pf-modal-actions { margin-top: 20px; }
+}
