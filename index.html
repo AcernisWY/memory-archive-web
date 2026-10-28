@@ -8,23 +8,15 @@
     <title>记忆档案馆 · Archive of Memories</title>
     <link rel="icon" type="image/webp" href="assets/logo.webp" />
     <link rel="preload" href="assets/background.webp" as="image" />
-    <link rel="preload" href="assets/logo.webp" as="image" />
-    <link rel="preload" href="assets/orb.webp" as="image" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="archive.css" />
-    <link rel="stylesheet" href="record-editor.css" />
-    <link rel="stylesheet" href="assistant.css" />
-    <link rel="stylesheet" href="profile.css" />
-    <script src="memory-store.js" defer></script>
-    <script src="profile-store.js" defer></script>
-    <script src="archive.js" defer></script>
-    <script src="record-editor.js" defer></script>
-    <script src="assistant-store.js" defer></script>
-    <script src="assistant-search.js" defer></script>
-    <script src="assistant.js" defer></script>
-    <script src="profile.js" defer></script>
-    <script src="profile-export.js" defer></script>
-    <script src="app.js" defer></script>
+    <link rel="preload" href="assets/logo.webp" as="image" fetchpriority="high" />
+    <link rel="stylesheet" href="site.90b4c0740c.css" />
+    
+    
+    <script src="site.d719b7f77b.js" defer></script>
+    
+    
+    
+    
   </head>
   <body>
     <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -39,7 +31,6 @@
       <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.6 7.4L22 12l-7.4 2.6L12 22l-2.6-7.4L2 12l7.4-2.6L12 2Z" /></symbol>
       <symbol id="i-replay" viewBox="0 0 24 24"><path d="M4 9a8 8 0 1 1 0 7M4 3v6h6" /></symbol>
     </svg>
-
     <div class="world" aria-hidden="true"><div class="world-image"></div><div class="world-shade"></div><div class="world-halo"></div></div>
     <main class="experience" id="experience" data-scene="intro" aria-label="记忆档案馆">
       <div class="glass-reflection" aria-hidden="true"></div>
@@ -51,16 +42,13 @@
         <span class="top-note"><span class="status-dot"></span>每一刻，都值得被记得</span>
         <button class="replay icon-button" id="replay" type="button" data-go="intro" aria-label="重新播放开场" title="重新播放开场"><svg><use href="#i-replay"/></svg></button>
       </header>
-
       <div class="stage">
         <div class="particles" id="particles" aria-hidden="true"></div>
         <div class="hero-logo" aria-hidden="true"><div class="logo-aura"></div><div class="logo-float"><img src="assets/logo.webp" alt="" width="400" height="400" draggable="false" /></div><div class="logo-shadow"></div></div>
-
         <section class="scene intro-scene is-active" id="intro" aria-labelledby="intro-title">
           <div class="intro-caption"><p class="eyebrow">EVERY MOMENT MATTERS</p><h1 id="intro-title" tabindex="-1">让记忆，有处安放</h1><div class="intro-progress" aria-hidden="true"><span></span></div></div>
           <button class="text-button skip-intro" type="button" data-go="welcome">跳过开场<svg><use href="#i-arrow"/></svg></button>
         </section>
-
         <section class="scene welcome-scene" id="welcome" aria-labelledby="welcome-title" aria-hidden="true" inert>
           <div class="welcome-copy">
             <p class="eyebrow reveal-item" style="--order:0"><span class="tiny-star">✧</span> 在这里，与每一刻重逢</p>
@@ -72,7 +60,6 @@
             <p class="welcome-footnote reveal-item" style="--order:5"><span class="small-line"></span> 属于你的故事，从这里开始</p>
           </div>
         </section>
-
         <section class="scene login-scene" id="login" aria-labelledby="login-title" aria-hidden="true" inert>
           <div class="login-layout">
             <div class="login-content">
@@ -90,16 +77,14 @@
             </div>
             <div class="login-divider" aria-hidden="true"></div>
             <aside class="orb-side" aria-label="记忆星球装饰">
-              <div class="orb-visual"><div class="orb-halo"></div><div class="orb-parallax"><img class="orb-image" src="assets/orb.webp" alt="紫蓝色光点汇成的记忆星球" width="700" height="700" draggable="false" /></div><span class="orb-spark spark-one">✦</span><span class="orb-spark spark-two">✧</span></div>
+              <div class="orb-visual"><div class="orb-halo"></div><div class="orb-parallax"><img class="orb-image" src="assets/orb.webp" loading="lazy" decoding="async" fetchpriority="low" alt="紫蓝色光点汇成的记忆星球" width="700" height="700" draggable="false" /></div><span class="orb-spark spark-one">✦</span><span class="orb-spark spark-two">✧</span></div>
               <div class="orb-caption"><div class="orb-caption-line"></div><p>让记忆，不止于想起</p><span>珍藏此刻 · 重逢往昔</span></div>
             </aside>
           </div>
         </section>
       </div>
-
       <footer class="shell-bottom"><p class="footer-poem">拾起微光，收藏日常。</p><nav class="scene-nav" aria-label="页面导航"><span class="nav-indicator" aria-hidden="true"></span><button type="button" data-go="intro" aria-current="step"><span>01</span>序章</button><button type="button" data-go="welcome"><span>02</span>欢迎</button><button type="button" data-go="login"><span>03</span>登录</button></nav><span class="footer-mark" aria-hidden="true">EST. IN YOUR MOMENTS</span></footer>
     </main>
-
     <dialog class="glass-dialog" id="info-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-body"><div class="dialog-shimmer" aria-hidden="true"></div><button class="dialog-close icon-button" type="button" id="close-dialog" aria-label="关闭弹窗"><svg><use href="#i-close"/></svg></button><div class="dialog-emblem" id="dialog-emblem"><svg><use href="#i-spark"/></svg></div><p class="eyebrow" id="dialog-eyebrow">ARCHIVE OF MEMORIES</p><h2 id="dialog-title"></h2><p id="dialog-body"></p><button class="primary-button dialog-primary" type="button" id="dialog-primary"><span>知道了</span><svg><use href="#i-arrow"/></svg></button></dialog>
     <noscript><div class="noscript-message">请启用 JavaScript，体验记忆档案馆的页面切换与交互。</div></noscript>
   </body>

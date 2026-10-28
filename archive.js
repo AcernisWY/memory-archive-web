@@ -33,7 +33,7 @@
     }).slice(0, 3);
   }
   function folderPhotosHTML(images) {
-    return images.map((image, index) => `<span class="folder-photo" data-memory-id="${escapeHTML(image.memoryId)}" data-image-id="${escapeHTML(image.id)}" style="--photo-order:${index}"><img src="${escapeHTML(image.src)}" alt="" draggable="false" decoding="async"/></span>`).join('');
+    return images.map((image, index) => `<span class="folder-photo" data-memory-id="${escapeHTML(image.memoryId)}" data-image-id="${escapeHTML(image.id)}" style="--photo-order:${index}"><img src="${escapeHTML(image.src)}" alt="" draggable="false" loading="lazy" decoding="async"/></span>`).join('');
   }
   function folderBackHTML(id) {
     return `<svg class="folder-back" viewBox="0 0 650 620" aria-hidden="true"><defs><linearGradient id="folder-back-${id}" x1="0" y1="0" x2="1" y2=".65"><stop stop-color="#6352b5"/><stop offset=".52" stop-color="#586dc0"/><stop offset="1" stop-color="#3d356b"/></linearGradient></defs><path d="M58 108H157C182 108 191 115 202 136L211 153C220 171 232 178 253 178H592Q636 178 636 222V543Q636 589 590 589H60Q14 589 14 543V154Q14 108 58 108Z" fill="url(#folder-back-${id})" stroke="#d2d3f8" stroke-opacity=".72" stroke-width="2"/></svg>`;

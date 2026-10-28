@@ -103,23 +103,32 @@
     particles.appendChild(particle);
   }
 
-  let pointerFrame;
+  const parallaxTarget = document.querySelector('.orb-parallax');
+  let pointerFrame = 0;
+  let pointerX = 0;
+  let pointerY = 0;
   function resetParallax() {
     cancelAnimationFrame(pointerFrame);
-    document.documentElement.style.setProperty('--pointer-x', '0px');
-    document.documentElement.style.setProperty('--pointer-y', '0px');
+    pointerFrame = 0;
+    parallaxTarget.style.setProperty('--pointer-x', '0px');
+    parallaxTarget.style.setProperty('--pointer-y', '0px');
   }
   experience.addEventListener('pointermove', (event) => {
-    if (currentScene === 'archive' || !finePointer.matches || reducedMotion.matches || event.pointerType === 'touch') return;
-    cancelAnimationFrame(pointerFrame);
+    if (currentScene !== 'login' || !finePointer.matches || reducedMotion.matches || event.pointerType === 'touch') return;
+    pointerX = event.clientX;
+    pointerY = event.clientY;
+    if (pointerFrame) return;
     pointerFrame = requestAnimationFrame(() => {
+      pointerFrame = 0;
+      if (currentScene !== 'login') return;
       const rect = experience.getBoundingClientRect();
-      const x = ((event.clientX - rect.left) / rect.width - 0.5) * 9;
-      const y = ((event.clientY - rect.top) / rect.height - 0.5) * 7;
-      document.documentElement.style.setProperty('--pointer-x', `${x.toFixed(2)}px`);
-      document.documentElement.style.setProperty('--pointer-y', `${y.toFixed(2)}px`);
+      const x = ((pointerX - rect.left) / rect.width - 0.5) * 9;
+      const y = ((pointerY - rect.top) / rect.height - 0.5) * 7;
+      // Scope changes to one foreground layer, without invalidating the whole page.
+      parallaxTarget.style.setProperty('--pointer-x', `${x.toFixed(2)}px`);
+      parallaxTarget.style.setProperty('--pointer-y', `${y.toFixed(2)}px`);
     });
-  });
+  }, { passive: true });
   experience.addEventListener('pointerleave', resetParallax);
   reducedMotion.addEventListener('change', resetParallax);
 
@@ -229,11 +238,12 @@
     if (dialog.open) { window.clearTimeout(closeTimer); dialog.close(); }
     setScene(['intro', 'welcome', 'login', 'archive'].includes(scene) ? scene : 'welcome', { route });
   });
-  const images = [...document.images].map((img) => img.decode ? img.decode().catch(() => {}) : Promise.resolve());
-  Promise.allSettled(images).then(() => {
-    document.body.classList.add('is-ready');
-    const initialRoute = location.hash;
-    const initialScene = initialRoute.slice(1).split('/')[0];
-    setScene(['intro', 'welcome', 'login', 'archive'].includes(initialScene) ? initialScene : 'intro', { focus: false, route: initialRoute });
-  });
+  // Show the active scene immediately; hidden-page images must never gate entry.
+  document.body.classList.add('is-ready');
+  const initialRoute = location.hash;
+  const initialScene = initialRoute.slice(1).split('/')[0];
+  setScene(['intro', 'welcome', 'login', 'archive'].includes(initialScene) ? initialScene : 'intro', { focus: false, route: initialRoute });
+  const syncVisibility = () => document.body.classList.toggle('page-hidden', document.hidden);
+  document.addEventListener('visibilitychange', syncVisibility);
+  syncVisibility();
 })();

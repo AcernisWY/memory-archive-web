@@ -24,7 +24,7 @@ button, input { -webkit-user-select: auto; }
 .svg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 .world { position: fixed; inset: 0; overflow: hidden; pointer-events: none; }
-.world-image { position: absolute; inset: -24px; background: url("assets/background.webp") center 50% / cover no-repeat; filter: brightness(1.08) contrast(1.06); transform: translate3d(var(--pointer-x), var(--pointer-y), 0) scale(1.025); transition: transform 1.8s var(--ease), filter 300ms ease; }
+.world-image { position: absolute; inset: -24px; background: url("assets/background.webp") center 50% / cover no-repeat; filter: brightness(1.08) contrast(1.06); transform: translateZ(0) scale(1.025); transition: transform 1.8s var(--ease), filter 300ms ease; }
 .world-shade { position: absolute; inset: 0; background: linear-gradient(100deg, #070d2d32, #10152b18 50%, #15143727), linear-gradient(0deg, #05091b54, transparent 50%, #090e252b); }
 .world-halo { position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 43%, #7258e724, transparent 56%); }
 .experience { position: relative; isolation: isolate; width: min(1480px, 100%); height: calc(100svh - 56px); max-height: 1000px; min-height: 650px; display: flex; flex-direction: column; border: 1px solid #dbdcff33; border-radius: 27px; background: linear-gradient(115deg, #aeb7f40c, #575ca009 45%, #8b71dd10); box-shadow: inset 0 1px 0 #ffffff12, 0 28px 90px #0407174d, 0 0 0 1px #11133220; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); overflow: hidden; opacity: 0; transform: translateY(8px); transition: opacity 700ms var(--ease), transform 900ms var(--ease); }
@@ -229,3 +229,17 @@ button, input { -webkit-user-select: auto; }
   .world-image, .orb-parallax { transform: none; }
   .reveal-item { transform: none; }
 }
+
+/* Keep background artwork static so glass panels can reuse their backdrop. */
+.experience:not([data-scene="login"]) .orb-image,
+.experience:not([data-scene="login"]) .orb-halo,
+.experience:not([data-scene="login"]) .orb-spark,
+.experience[data-scene="login"] .logo-float,
+.experience[data-scene="login"] .logo-aura {
+  animation-play-state: paused;
+}
+.page-hidden *, .page-hidden *::before, .page-hidden *::after {
+  animation-play-state: paused !important;
+}
+/* Animate the foreground independently of the large glass surfaces. */
+.orb-parallax { will-change: transform; }
